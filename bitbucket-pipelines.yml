@@ -1,0 +1,29 @@
+image: java:8
+
+options:
+ size: 2x
+
+pipelines:
+ default:
+ - step:
+       name: Make Build
+       caches:
+         - gradle
+       script:
+         - bash ./gradlew -x test build
+ - step:
+       name: Make Test
+       caches:
+         - gradle
+       script:
+         - bash ./gradlew test
+       services:
+         - postgres
+definitions:
+ services:
+   postgres:
+     image: postgres
+     environment:
+       POSTGRES_DB: 'resistance'
+       POSTGRES_USER: 'edgar'
+       POSTGRES_PASSWORD: 'secret'

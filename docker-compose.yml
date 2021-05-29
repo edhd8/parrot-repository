@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  test:
+    image: java:8
+    volumes:
+      - ${MY_WORKSPACE}:/ws
+    working_dir: /ws${WORKSPACE_PATH:-/}
+    user: ${MY_USER:-root}
+    depends_on:
+      - postgres
+    command: >
+      ./gradlew --no-daemon
+      -g ./.gradle-cache
+      -Dspring.datasource.url=jdbc:postgresql://postgres:5432/resistance
+      test jacocoTestReport
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: 'resistance'
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'admin'
