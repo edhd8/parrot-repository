@@ -7,4 +7,5 @@ object ErrorCode {
     const val SAVE_INFO = "save_info_error"
     const val INVALID_SIZE = "get_message_invalid_size"
     const val GET_DISTANCES = "get_distances_error"
+    const val BUILD_ERROR = "build_dto_error"
 }

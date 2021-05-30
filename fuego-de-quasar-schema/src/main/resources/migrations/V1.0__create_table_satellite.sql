@@ -2,7 +2,7 @@ CREATE TABLE public.satellite (
     id SERIAL,
     name VARCHAR NOT NULL,
     distance NUMERIC(10,1) NOT NULL,
-    message          TEXT,
+    message          TEXT NOT NULL,
     created_at TIMESTAMP NOT NULL default now(),
     updated_at TIMESTAMP NOT NULL default now(),
     constraint pk_satellite PRIMARY KEY (id)

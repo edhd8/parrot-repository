@@ -15,5 +15,5 @@ interface CommunicationsInterface {
 
     fun saveInfo(satelliteName: String, satellite: Satellite): ResponseEntity<*>
 
-    fun getInfo(satelliteName: String): ResponseEntity<*>
+    fun getInfo(satelliteName: String, satellite: Satellite): ResponseEntity<*>
 }

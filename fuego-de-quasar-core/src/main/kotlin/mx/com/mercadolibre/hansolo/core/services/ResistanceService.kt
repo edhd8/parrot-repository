@@ -10,18 +10,23 @@ import mx.com.mercadolibre.hansolo.common.exceptions.ErrorMessage
 import mx.com.mercadolibre.hansolo.common.request.Satellites
 import mx.com.mercadolibre.hansolo.common.responses.CoordinatesResponse
 import mx.com.mercadolibre.hansolo.common.responses.InfoResponse
+import mx.com.mercadolibre.hansolo.domain.repository.SatelliteRepository
 import org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer
 import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
-import java.util.Arrays
-import java.util.Collections
+import java.sql.Timestamp
+import java.time.LocalDateTime
 import java.util.stream.Collectors
 import java.util.stream.Stream
 
 @Service
 class ResistanceService {
     private val logger = LoggerFactory.getLogger(ResistanceService::class.java)
+
+    @Autowired
+    private lateinit var satelliteRepository: SatelliteRepository
 
     fun getLocation(distances: DoubleArray) : CoordinatesResponse {
         try {
@@ -106,6 +111,16 @@ class ResistanceService {
             val gson = Gson()
             logger.info("--FUEGO DE QUASAR --ResistanceService:saveInfo --Satellite Name: [{}] --Satellite: {}", satelliteName, gson.toJson(satellite))
 
+            val satelliteEntity = mx.com.mercadolibre.hansolo.domain.model.Satellite().apply {
+                name = satelliteName
+                distance = satellite.distance
+                message = gson.toJson(satellite.message)
+                createdAt = Timestamp(System.currentTimeMillis())
+                updatedAt = Timestamp(System.currentTimeMillis())
+            }
+
+            satelliteRepository.save(satelliteEntity)
+
             return HttpStatus.OK.name
         } catch (e: Exception) {
             //TODO EXCEPTION LOCATION WITH I18N
@@ -114,11 +129,34 @@ class ResistanceService {
         }
     }
 
-    fun getInfo(satelliteName: String): InfoResponse {
+    fun getInfo(satelliteName: String, satellite: Satellite): InfoResponse {
         try {
             logger.info("--FUEGO DE QUASAR --ResistanceService:getInfo --Satellite Name: [{}]", satelliteName)
 
-            return InfoResponse()
+            val satelliteEntity = satelliteRepository.findByName(satelliteName)
+
+            satelliteEntity?.let {
+                logger.info("--FUEGO DE QUASAR --ResistanceService:getInfo --UpdateSatelliteByName")
+                val gson = Gson()
+
+                satelliteRepository.updateByName(
+                    satellite.distance,
+                    gson.toJson(satellite.message),
+                    Timestamp.valueOf(LocalDateTime.now()),
+                    satelliteName
+                )
+            } ?: run {
+                logger.info("--FUEGO DE QUASAR --ResistanceService:getInfo --SaveSatellite")
+                saveInfo(satelliteName, satellite)
+            }
+
+            logger.info("--FUEGO DE QUASAR --ResistanceService:getInfo --Call to calculateInfo")
+            val satellitesList = satelliteRepository.findAll()
+
+            val satellitesDto = buildDtoSatellites(satellitesList)
+
+            val satellites = Satellites(satellitesDto)
+            return calculateInfo(satellites)
         } catch (e: Exception) {
             //TODO EXCEPTION LOCATION WITH I18N
             logger.error("--FUEGO DE QUASAR --ResistanceService:getInfo --Error: [{}]", e.message)
@@ -149,7 +187,7 @@ class ResistanceService {
     }
 
     private fun assembleMessage(satellitesMessages: List<java.util.ArrayList<String>>): String {
-        var finalMessage = ""
+        var finalMessage: String
         for (message in satellitesMessages) {
             if (message.size > 0 && message[0] != "") {
                 finalMessage = if (message.size == 1) message[0] else message[0] + " "
@@ -187,4 +225,32 @@ class ResistanceService {
             throw ApiException(ErrorCode.GET_DISTANCES, ErrorMessage.GET_DISTANCES, HttpStatus.NOT_FOUND)
         }
     }
+
+    fun buildDtoSatellites(satellites: List<mx.com.mercadolibre.hansolo.domain.model.Satellite>): List<Satellite> {
+        try {
+            val satellitesDto = arrayListOf<Satellite>()
+
+            satellites.forEach {
+
+
+
+                s -> val sat = Satellite(
+                name = s.name,
+                distance = s.distance!!,
+                //message = arrayListOf(s.message)
+                message = s.message.replace("[","").replace("]","").replace("\"","")
+                    .split(",") as ArrayList<String>
+            )
+
+                satellitesDto.add(sat)
+            }
+
+            return satellitesDto
+        } catch (e: Exception) {
+            //TO DO EXCEPTION LOCATION WITH I18N
+            logger.error("--FUEGO DE QUASAR --ResistanceService:getDistances --Error: [{}]", e.message)
+            throw ApiException(ErrorCode.BUILD_ERROR, ErrorMessage.BUILD_ERROR, HttpStatus.NOT_FOUND)
+        }
+    }
+
 }

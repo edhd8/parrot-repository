@@ -1,19 +1,12 @@
 version: '3'
 
 services:
-  test:
-    image: java:8
-    volumes:
-      - ${MY_WORKSPACE}:/ws
-    working_dir: /ws${WORKSPACE_PATH:-/}
-    user: ${MY_USER:-root}
+  spring:
+    image: edhd8/fuego-de-quasar:1.0
+    ports:
+    - 8088:8088
     depends_on:
       - postgres
-    command: >
-      ./gradlew --no-daemon
-      -g ./.gradle-cache
-      -Dspring.datasource.url=jdbc:postgresql://postgres:5432/resistance
-      test jacocoTestReport
   postgres:
     image: postgres
     environment:

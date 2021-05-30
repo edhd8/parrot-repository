@@ -54,9 +54,10 @@ class CommunicationsController : CommunicationsInterface {
     }
 
     @GetMapping(value = [Route.Resistance.TOP_SECRET_SPLIT])
-    override fun getInfo(@PathVariable("satellite_name") satelliteName: String): ResponseEntity<*> {
+    override fun getInfo(@PathVariable("satellite_name") satelliteName: String,
+                         @RequestBody satellite: Satellite): ResponseEntity<*> {
         return try {
-            ResponseEntity.status(HttpStatus.OK).body(resistanceService.getInfo(satelliteName))
+            ResponseEntity.status(HttpStatus.OK).body(resistanceService.getInfo(satelliteName, satellite))
         } catch (e: ApiException) {
             throw ResponseStatusException(HttpStatus.NOT_FOUND, e.message, e)
         }
