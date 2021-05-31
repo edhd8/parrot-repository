@@ -119,7 +119,8 @@ class ResistanceService {
                 updatedAt = Timestamp(System.currentTimeMillis())
             }
 
-            satelliteRepository.save(satelliteEntity)
+            val response = satelliteRepository.save(satelliteEntity)
+            logger.info("--FUEGO DE QUASAR --ResistanceService:saveInfo --Response Save: [{}]", response)
 
             return HttpStatus.OK.name
         } catch (e: Exception) {
@@ -131,9 +132,11 @@ class ResistanceService {
 
     fun getInfo(satelliteName: String, satellite: Satellite): InfoResponse {
         try {
+            val gson = Gson()
             logger.info("--FUEGO DE QUASAR --ResistanceService:getInfo --Satellite Name: [{}]", satelliteName)
 
             val satelliteEntity = satelliteRepository.findByName(satelliteName)
+            logger.info("--FUEGO DE QUASAR --ResistanceService:getInfo --Response FindByName: [{}]", gson.toJson(satelliteEntity))
 
             satelliteEntity?.let {
                 logger.info("--FUEGO DE QUASAR --ResistanceService:getInfo --UpdateSatelliteByName")
