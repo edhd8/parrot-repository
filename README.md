@@ -25,6 +25,8 @@ Posición de los satélites actualmente en servicio:
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
+Las tecnologías empleadas en el desarrollo fueron las siguientes.
 
-- [AngularJS] - HTML enhanced for web apps!
+| Plugin | README |
+| ------ | ------ |
+| Kotlin | [https://kotlinlang.org/] |
