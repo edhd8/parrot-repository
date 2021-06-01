@@ -23,6 +23,8 @@ Posición de los satélites actualmente en servicio:
 - URL en donde este hosteado el servicio https://challenge.engicoders.com/ https://www.getpostman.com/collections/cf02d2aee0cd45152d74
 - Contemplar buenas prácticas (tip: imaginar que estas poniendo una aplicación productiva)
 
-Términos y condiciones de uso del sitio https://www.mercadolibre.com.mx/
+## Tech
 
-> https://www.mercadolibre.com.mx/ayuda/terminos-y-condiciones-uso-del-sitio_2090
+Dillinger uses a number of open source projects to work properly:
+
+- [AngularJS] - HTML enhanced for web apps!
