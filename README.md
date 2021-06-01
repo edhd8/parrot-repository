@@ -26,6 +26,18 @@ Posición de los satélites actualmente en servicio:
 - URL en donde este hosteado el servicio https://challenge.engicoders.com/
 - Contemplar buenas prácticas (tip: imaginar que estas poniendo una aplicación productiva)
 
+## Installation
+
+Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+cd dillinger
+npm i
+node app
+```
+
 ## Tech
 
 Las tecnologías empleadas en el desarrollo fueron las siguientes.
