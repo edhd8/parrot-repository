@@ -27,6 +27,6 @@ Posición de los satélites actualmente en servicio:
 
 Las tecnologías empleadas en el desarrollo fueron las siguientes.
 
-| Plugin | README |
-| ------ | ------ |
-| Kotlin | https://kotlinlang.org/ |
+| Tecnología o herramienta | Enlace | Versión |
+| ------ | ------ | ------ |
+| Kotlin | https://kotlinlang.org/ | 1.3.71 |
