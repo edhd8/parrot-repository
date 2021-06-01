@@ -52,3 +52,4 @@ Las tecnologías empleadas en el desarrollo fueron las siguientes.
 | Git Hub | https://github.com/ | |
 | AWS | https://aws.amazon.com/es/ | |
 
+![image](https://user-images.githubusercontent.com/67127741/120263982-6e6aab00-c262-11eb-9460-d478e29c8aa3.png)
