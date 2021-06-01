@@ -29,4 +29,4 @@ Las tecnologías empleadas en el desarrollo fueron las siguientes.
 
 | Plugin | README |
 | ------ | ------ |
-| Kotlin | [https://kotlinlang.org/] |
+| Kotlin | https://kotlinlang.org/ |
