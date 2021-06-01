@@ -17,7 +17,7 @@ Posición de los satélites actualmente en servicio:
 
 ## Entregables
 
-- Código fuente en repositorio **privado** de GitHub
+- Código fuente en repositorio **privado** de GitHub https://github.com/edhd8/fuego-de-quasar
 - Documentación que indique cómo ejecutar el programa https://www.getpostman.com/collections/cf02d2aee0cd45152d74
 - Documentación del proyecto que considere importante
 
@@ -30,21 +30,21 @@ Posición de los satélites actualmente en servicio:
 
 El proyecto ya tiene sus archivos de configuración en orden: application.properties, build.gradle.kts, etc.
 
-Paso 1. Descargar la última versión del código de la rama master https://github.com/edhd8/fuego-de-quasar.git
-Paso 2. En la pestaña de Gradle, ejecutar la tarea "bootJar"
-Paso 3. Construir la imagen del proyecto
+- Paso 1. Descargar la última versión del código de la rama master https://github.com/edhd8/fuego-de-quasar.git
+- Paso 2. En la pestaña de Gradle, ejecutar la tarea "bootJar"
+- Paso 3. Construir la imagen del proyecto
 
 ```sh
 docker build --tag {user_docker_hub}/fuego-de-quasar:{version} .
 ```
-Paso 4. Modificar archivo docker-compose.yml version previamente generada
-Paso 5. Levantar localmente el contenedor de docker
+- Paso 4. Modificar archivo docker-compose.yml version previamente generada
+- Paso 5. Levantar localmente el contenedor de docker
 
 ```sh
 docker-compose up -d
 ```
 
-Paso 6. Probar desde Postman la ejecución de los flujos locales en el puerto 8088
+- Paso 6. Probar desde Postman la ejecución de los flujos locales en el puerto 8088
 
 ## Tech
 
