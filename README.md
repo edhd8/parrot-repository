@@ -19,9 +19,24 @@ Posición de los satélites actualmente en servicio:
 
 - Código fuente en repositorio **privado** de GitHub
 - Documentación que indique cómo ejecutar el programa https://google.docs.word.screenshots
-- Documentación del proyecto que considere importante https://diagrama.public.link.com & diagrama de clases 
+- Documentación del proyecto que considere importante
+
+![image](https://user-images.githubusercontent.com/67127741/120262871-34000e80-c260-11eb-9f2d-bb72743308fe.png)
+
 - URL en donde este hosteado el servicio https://challenge.engicoders.com/
 - Contemplar buenas prácticas (tip: imaginar que estas poniendo una aplicación productiva)
+
+## Installation
+
+Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+cd dillinger
+npm i
+node app
+```
 
 ## Tech
 
