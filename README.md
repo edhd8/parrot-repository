@@ -28,15 +28,23 @@ Posición de los satélites actualmente en servicio:
 
 ## Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+El proyecto ya tiene sus archivos de configuración en orden: application.properties, build.gradle.kts, etc.
 
-Install the dependencies and devDependencies and start the server.
+Paso 1. Descargar la última versión del código de la rama master https://github.com/edhd8/fuego-de-quasar.git
+Paso 2. En la pestaña de Gradle, ejecutar la tarea "bootJar"
+Paso 3. Construir la imagen del proyecto
 
 ```sh
-cd dillinger
-npm i
-node app
+docker build --tag {user_docker_hub}/fuego-de-quasar:{version} .
 ```
+Paso 4. Modificar archivo docker-compose.yml version previamente generada
+Paso 5. Levantar localmente el contenedor de docker
+
+```sh
+docker-compose up -d
+```
+
+Paso 6. Probar desde Postman la ejecución de los flujos locales en el puerto 8088
 
 ## Tech
 
