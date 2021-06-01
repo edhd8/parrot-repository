@@ -30,3 +30,10 @@ Las tecnologías empleadas en el desarrollo fueron las siguientes.
 | Tecnología o herramienta | Enlace | Versión |
 | ------ | ------ | ------ |
 | Kotlin | https://kotlinlang.org/ | 1.3.71 |
+| Docker Hub | https://hub.docker.com/ | 20.10.6 |
+| MarkDown | https://dillinger.io/ | |
+| PostgreSQL | https://www.postgresql.org/ | |
+| Git Hub | https://github.com/ | |
+| Spring Boot | https://spring.io/projects/spring-boot | 2.2.4.RELEASE |
+| AWS | https://aws.amazon.com/es/ | |
+
