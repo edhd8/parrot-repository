@@ -37,14 +37,24 @@ El proyecto ya tiene sus archivos de configuración en orden: application.proper
 ```sh
 docker build --tag {user_docker_hub}/fuego-de-quasar:{version} .
 ```
+- Paso 3.1 Subir la imagen a Docker Hub
+
+```sh
+docker push {user_docker_hub}/fuego-de-quasar:{version}
+```
+
 - Paso 4. Modificar archivo docker-compose.yml version previamente generada
-- Paso 5. Levantar localmente el contenedor de docker
+- Paso 5. Levantar el contenedor de docker
+
+![image](https://user-images.githubusercontent.com/67127741/120374666-73ba0b00-c2df-11eb-9542-799b192960ca.png)
 
 ```sh
 docker-compose up -d
 ```
 
-- Paso 6. Probar desde Postman la ejecución de los flujos locales en el puerto 8088
+- Paso 6. Probar desde Postman la ejecución de los flujos
+
+![image](https://user-images.githubusercontent.com/67127741/120375056-efb45300-c2df-11eb-93f5-35143555de03.png)
 
 ## Tech
 
