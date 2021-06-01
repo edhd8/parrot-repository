@@ -1,4 +1,4 @@
 # Operación Fuego de Quasar
 ## _Challenge Mercado Libre_
 
-[![Ing. Edgar|Guerrero](https://image.flaticon.com/icons/png/32/4341/4341160.png)](https://www.linkedin.com/in/ing-edgar-guerrero/)
+[![Mercado Libre](https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.5/mercadolibre/180x180.png)](https://www.mercadolibre.com.mx/)
