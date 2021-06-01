@@ -11,6 +11,6 @@ Como jefe de comunicaciones rebelde, tu misión es crear un programa en Golang q
 
 Posición de los satélites actualmente en servicio:
 
-- Kenobi: [-500, -200] https://emojis.slackmojis.com/emojis/images/1450319459/134/death_star.png?1450319459
-- Skywalker: [100, -100]
-- Sato: [500, 100]
+- Kenobi: [-500, -200] 🛰️:
+- Skywalker: [100, -100] 🛰️:
+- Sato: [500, 100] 🛰️:
