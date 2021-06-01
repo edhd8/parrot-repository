@@ -19,8 +19,8 @@ Posición de los satélites actualmente en servicio:
 
 - Código fuente en repositorio **privado** de GitHub
 - Documentación que indique cómo ejecutar el programa https://google.docs.word.screenshots
-- Documentación del proyecto que considere importante https://diagrama.public.link.com
-- URL en donde este hosteado el servicio https://challenge.engicoders.com/ https://www.getpostman.com/collections/cf02d2aee0cd45152d74
+- Documentación del proyecto que considere importante https://diagrama.public.link.com & diagrama de clases 
+- URL en donde este hosteado el servicio https://challenge.engicoders.com/
 - Contemplar buenas prácticas (tip: imaginar que estas poniendo una aplicación productiva)
 
 ## Tech
@@ -31,9 +31,9 @@ Las tecnologías empleadas en el desarrollo fueron las siguientes.
 | ------ | ------ | ------ |
 | Kotlin | https://kotlinlang.org/ | 1.3.71 |
 | Docker Hub | https://hub.docker.com/ | 20.10.6 |
-| MarkDown | https://dillinger.io/ | |
-| PostgreSQL | https://www.postgresql.org/ | |
-| Git Hub | https://github.com/ | |
 | Spring Boot | https://spring.io/projects/spring-boot | 2.2.4.RELEASE |
+| PostgreSQL | https://www.postgresql.org/ | 13.3 |
+| MarkDown | https://dillinger.io/ | |
+| Git Hub | https://github.com/ | |
 | AWS | https://aws.amazon.com/es/ | |
 
