@@ -17,4 +17,6 @@ Posición de los satélites actualmente en servicio:
 
 ## Entregables
 
-> Código fuente en repositorio **privado** de GitHub
+- Documentación que indique cómo ejecutar el programa
+
+  > Código fuente en repositorio **privado** de GitHub
