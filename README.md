@@ -15,6 +15,8 @@ Posición de los satélites actualmente en servicio:
 > Skywalker: [100, -100] 🛰️:
 > Sato: [500, 100] 🛰️:
 
+![Trilateration](https://user-images.githubusercontent.com/67127741/120378261-ce556600-c2e3-11eb-8e52-b4b406e35436.png)
+
 ## Entregables
 
 - Código fuente en repositorio **privado** de GitHub https://github.com/edhd8/fuego-de-quasar
@@ -42,6 +44,7 @@ docker build --tag {user_docker_hub}/fuego-de-quasar:{version} .
 ```sh
 docker push {user_docker_hub}/fuego-de-quasar:{version}
 ```
+![image](https://user-images.githubusercontent.com/67127741/120377943-669f1b00-c2e3-11eb-990a-0530da823da3.png)
 
 - Paso 4. Modificar archivo docker-compose.yml version previamente generada
 - Paso 5. Levantar el contenedor de docker
@@ -55,6 +58,10 @@ docker-compose up -d
 - Paso 6. Probar desde Postman la ejecución de los flujos
 
 ![image](https://user-images.githubusercontent.com/67127741/120375056-efb45300-c2df-11eb-93f5-35143555de03.png)
+
+![ECS AWS](https://user-images.githubusercontent.com/67127741/120378221-c1d10d80-c2e3-11eb-8d5a-6d1474271100.png)
+
+Nota: _se instaló certificado de seguridad https://challenge.engicoders.com/health utilizando traefik http://challenge.engicoders.com:8080/dashboard/#/_
 
 ## Tech
 
