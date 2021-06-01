@@ -11,12 +11,18 @@ Como jefe de comunicaciones rebelde, tu misión es crear un programa en Golang q
 
 Posición de los satélites actualmente en servicio:
 
-- Kenobi: [-500, -200] 🛰️:
-- Skywalker: [100, -100] 🛰️:
-- Sato: [500, 100] 🛰️:
+> Kenobi: [-500, -200] 🛰️:
+> Skywalker: [100, -100] 🛰️:
+> Sato: [500, 100] 🛰️:
 
 ## Entregables
 
-- Documentación que indique cómo ejecutar el programa
+- Código fuente en repositorio **privado** de GitHub
+- Documentación que indique cómo ejecutar el programa https://google.docs.word.screenshots
+- Documentación del proyecto que considere importante https://diagrama.public.link.com
+- URL en donde este hosteado el servicio https://challenge.engicoders.com/ https://www.getpostman.com/collections/cf02d2aee0cd45152d74
+- Contemplar buenas prácticas (tip: imaginar que estas poniendo una aplicación productiva)
 
-  > Código fuente en repositorio **privado** de GitHub
+Términos y condiciones de uso del sitio https://www.mercadolibre.com.mx/
+
+> https://www.mercadolibre.com.mx/ayuda/terminos-y-condiciones-uso-del-sitio_2090
