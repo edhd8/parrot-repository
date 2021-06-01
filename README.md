@@ -18,7 +18,7 @@ Posición de los satélites actualmente en servicio:
 ## Entregables
 
 - Código fuente en repositorio **privado** de GitHub
-- Documentación que indique cómo ejecutar el programa
+- Documentación que indique cómo ejecutar el programa https://www.getpostman.com/collections/cf02d2aee0cd45152d74
 - Documentación del proyecto que considere importante
 
 ![image](https://user-images.githubusercontent.com/67127741/120262871-34000e80-c260-11eb-9f2d-bb72743308fe.png)
