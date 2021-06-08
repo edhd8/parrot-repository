@@ -80,4 +80,3 @@ Las tecnologías empleadas en el desarrollo fueron las siguientes.
 ## Gitflow
 
 ![image](https://user-images.githubusercontent.com/67127741/120264051-935f1e00-c262-11eb-812a-7a65c24654c0.png)
-
