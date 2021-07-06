@@ -1,4 +1,4 @@
-package mx.com.mercadolibre.app.controller
+package mx.com.mercadolibre.hansolo.app.controllers
 
 import mx.com.mercadolibre.hansolo.app.controllers.HealthCheckController
 import org.junit.Assert
