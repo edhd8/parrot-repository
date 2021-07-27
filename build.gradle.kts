@@ -26,7 +26,7 @@ buildscript {
 }
 
 subprojects {
-    group = "mx.com.mercadolibre.hansolo"
+    group = "io.parrotsoftware.pos"
 }
 
 jacoco {
@@ -90,7 +90,7 @@ allprojects {
     }
 
     tasks.getByName<BootJar>("bootJar") {
-        mainClassName = "mx.com.mercadolibre.hansolo.app.ApplicationKt"
+        mainClassName = "io.parrotsoftware.pos.app.ApplicationKt"
     }
 
     tasks {

@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title Api rest - Users - Orders & Products
+
+participant Client_API
+participant Parrot_Challenge_MS
+database parrot_db
+
+Client_API -> Parrot_Challenge_MS: GET: http://{ip_publica}/user/{user_name}
+Parrot_Challenge_MS --> parrot_db: saveUser(userEntity)
+
+alt Cuando el usuario ya se encuentra guardado
+Parrot_Challenge_MS --> parrot_db: Excepción controlada
+end
+
+parrot_db --> Parrot_Challenge_MS: la entidad guardada/excepción
+Parrot_Challenge_MS --> Client_API: infoResponse()
+
+@enduml

@@ -1,58 +1,83 @@
-# Operación Fuego de Quasar
-## _Challenge Mercado Libre_ ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
+# Parrot 
+## _Backend Coding Challenge_ ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
-Han Solo ha sido recientemente nombrado General de l a Alianza Rebelde y busca dar un gran golpe contra el Imperio Galáctico para reavivar la llama de la resistencia. El servicio de inteligencia rebelde ha detectado un l lamado de auxilio de una nave portacarga i mperial a l a deriva en un campo de asteroides. El manifiesto de l a nave es ultra clasificado, pero se rumorea que transporta raciones y armamento para una legión entera.
+Se tiene que crear una API que será consumida por un conjunto de clientes
+(móviles y web). El API será consumida por una base de 1000 usuarios con uso constante para la
+creación de órdenes. Tiene que contener los siguientes servicios web, almacenando los datos
+necesarios para su correcto funcionamiento.
 
-[![Mercado Libre](https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.5/mercadolibre/180x180.png)](https://www.mercadolibre.com.mx/)
+[![Parrot Software](https://pos.parrotsoftware.io/wp-content/uploads/2021/06/Parrot_Illustration_BannerP-1.gif)](https://pos.parrotsoftware.io/)
 
-## Desafío
+## Requerimientos de negocio
 
-Como jefe de comunicaciones rebelde, tu misión es crear un programa en Golang que retorne la fuente y contenido del mensaje de auxilio. Para esto, cuentas con tres satélites que te permitirán triangular l a posición, ¡pero cuidado! el mensaje puede no l legar completo a cada satélite debido al campo de asteroides frente a la nave.
+Creación de **usuarios**: Los usuarios no se podrán modificar una vez creados.
+- Email (Llave única)
+- Nombre
+- No es necesario un password para el manejo de usuarios
 
-Posición de los satélites actualmente en servicio:
+(Opcional) Obtener credenciales para consulta de todos los servicios que
+dependan del usuario. Todos los servicios web relacionados a un usuario
+deben estar protegidos por algún estándar de Autenticación.
 
-> Kenobi: [-500, -200] 🛰️:
-> Skywalker: [100, -100] 🛰️:
-> Sato: [500, 100] 🛰️:
+Crear **órdenes** para un usuario: Las ordenes serán creadas por él mismo.
+- Nombre del cliente externo quien pidió la orden
+- Precio total de la orden
+- Lista de productos que conforman la orden
 
-![Trilateration](https://user-images.githubusercontent.com/67127741/120378261-ce556600-c2e3-11eb-8e52-b4b406e35436.png)
+Las órdenes deben contener la lista de **productos** que la conforman. Los
+productos son creados por el usuario al mismo tiempo que se crea la orden.
+Productos con el mismo nombre serán considerados como iguales.
+- Nombre del producto
+- Precio unitario
+- Cantidad
+
+Reporte de productos vendidos.
+- Filtrado por fecha (inicio y fin)
+- Ordenado por producto de mayor a menor vendido
+- Las columnas necesarias para el reporte son nombre del producto,
+  cantidad total y precio total
+
+Entidades de la base de datos:
+
+> User 👤 table name: [users], user is a reservate word.
+> 
+> Order 📦 table name: [order]
+>
+> Product Catalog 💻 table name: [product_catalog]
+
+![image info](D:\Aplicaciones\Parrot Challenge\diagrams\smartphone.png)
 
 ## Entregables
 
-- Código fuente en repositorio **privado** de GitHub https://github.com/edhd8/fuego-de-quasar
-- Documentación que indique cómo ejecutar el programa https://www.getpostman.com/collections/cf02d2aee0cd45152d74
-- Documentación del proyecto que considere importante
-
-![image](https://user-images.githubusercontent.com/67127741/120262871-34000e80-c260-11eb-9f2d-bb72743308fe.png)
-
-- URL en donde este hosteado el servicio https://challenge.engicoders.com/
-- Contemplar buenas prácticas (tip: imaginar que estas poniendo una aplicación productiva)
-
+- Código fuente en repositorio **público** de GitHub https://github.com/edhd8/parrot-challenge
+- Documentación sobre cómo ejecutar el programa https://www.getpostman.com/collections/29b354016d3c1b7cf323
+![image info](http://www.plantuml.com/plantuml/png/ZP2zQYin48NxUOgfxlKjzcw_HR0n9gG8CVcfbrbfOWkq8qKQXHZZfyeZvCMY9SGcO4CQIHpfpCUdULPAMaOFVxUgCNTj6pt9bFmtOMmplnGMmurrj4aq0b3H86KSE06eKy-uY0uJPyK6dpAdNFUxPAV37rodO8lH310hnnaNIHINth5elrZV_8ZNb5BGVhabxrastDy-W2MbWJ9Z_Bgq0y2fZitLkLQ7rwl73YUZAhHtiOzbyCxGeIsPKxkVrbvev0ESgMDJnnvv7MPwvSbiDjLMKgrt_m38Lv52OWEonv8B9HTmHvWPMKnXqKIugR4b6tx3MRqPZiPzl0kQKDl1aoLWiG37LzXSKlQ45Uagx1jABHydNkIVFhD39y_XddCCadbM5UULNKR_2G00)
+  
 ## Installation
 
 El proyecto ya tiene sus archivos de configuración en orden: application.properties, build.gradle.kts, etc. Si se desea desplegar en ambiente productivo realizar los pasos 1, 6-10, los pasos 2-5 son opcionales si se desea ejecutar el proyecto en ambiente local. El paso 11 es común en ambos ambientes.
 
-- Paso 1. Descargar la última versión del código de la rama develop https://github.com/edhd8/fuego-de-quasar.git
+- Paso 1. Descargar la última versión del código de la rama develop https://github.com/edhd8/parrot-challenge.git
 - Paso 2. Compilar el proyecto con Ctrl+F9, correspondiente a la opción 'build project' esperando el resultado
 ```sh
 BUILD SUCCESS
 ```
 - Paso 3. Configurar la ejecución del proyecto de la siguiente forma:
-![image](https://user-images.githubusercontent.com/67127741/124666280-6dd1bf80-de73-11eb-8e5a-e5fdbcaf0878.png)
-- Paso 4. Instalar postgreSQL y crear BD resistance de manera local
+  ![image info](D:\Aplicaciones\Parrot Challenge\diagrams\run configuration parrot.png)
+- Paso 4. Instalar postgreSQL y crear BD **db_parrot** de manera local
 - Paso 5. Si se desea ejecutar en ambiente local simplemente dar click en Run 'Application'
 - Paso 6. En la pestaña de Gradle, ejecutar la tarea "bootJar" dentro de la capeta build
 - Paso 7. Si se va a desplegar en ambiente productivo, construir la imagen del proyecto
 
 ```sh
-docker build --tag {user_docker_hub}/fuego-de-quasar:{version} .
+docker build --tag {user_docker_hub}/parrot-challenge:{version} .
 ```
 - Paso 8. Subir la imagen a Docker Hub
 
 ```sh
-docker push {user_docker_hub}/fuego-de-quasar:{version}
+docker push {user_docker_hub}/parrot-challenge:{version}
 ```
-![image](https://user-images.githubusercontent.com/67127741/120377943-669f1b00-c2e3-11eb-990a-0530da823da3.png)
+![image info](D:\Aplicaciones\Parrot Challenge\diagrams\docker.png)
 
 - Paso 9. Modificar archivo docker-compose.yml version previamente generada
 - Paso 10. Levantar el contenedor de docker
@@ -65,10 +90,9 @@ docker-compose up -d
 
 - Paso 11. Probar desde Postman la ejecución de los flujos
 
-![image](https://user-images.githubusercontent.com/67127741/120375056-efb45300-c2df-11eb-93f5-35143555de03.png)
+![image info](D:\Aplicaciones\Parrot Challenge\diagrams\postman.png)
 
 ![image](https://user-images.githubusercontent.com/67127741/124666499-bf7a4a00-de73-11eb-9b42-4043a98a82fe.png)
-Nota: _se instaló certificado de seguridad https://challenge.engicoders.com/health utilizando traefik http://challenge.engicoders.com:8080/dashboard/#/_
 
 ## Tech
 

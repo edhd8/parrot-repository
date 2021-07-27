@@ -1,8 +1,8 @@
-rootProject.name = "fuego-de-quasar"
+rootProject.name = "parrot-challenge"
 
-include("fuego-de-quasar-api")
-include("fuego-de-quasar-app")
-include("fuego-de-quasar-common")
-include("fuego-de-quasar-core")
-include("fuego-de-quasar-domain")
-include("fuego-de-quasar-schema")
+include("parrot-challenge-api")
+include("parrot-challenge-app")
+include("parrot-challenge-common")
+include("parrot-challenge-core")
+include("parrot-challenge-domain")
+include("parrot-challenge-schema")
