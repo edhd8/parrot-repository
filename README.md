@@ -6,7 +6,7 @@ Se tiene que crear una API que será consumida por un conjunto de clientes
 creación de órdenes. Tiene que contener los siguientes servicios web, almacenando los datos
 necesarios para su correcto funcionamiento.
 
-[![Parrot Software](https://pos.parrotsoftware.io/wp-content/uploads/2021/06/Parrot_Illustration_BannerP-1.gif)](https://pos.parrotsoftware.io/)
+![image info](D:\Aplicaciones\parrot-repository-master\diagrams\image.png)
 
 ## Requerimientos de negocio
 
@@ -45,7 +45,7 @@ Entidades de la base de datos:
 >
 > Product Catalog 💻 table name: [product_catalog]
 
-![image info](D:\Aplicaciones\Parrot Challenge\diagrams\smartphone.png)
+![image info](D:\Aplicaciones\parrot-repository-master\diagrams\smartphone.png)
 
 ## Entregables
 
@@ -63,7 +63,7 @@ El proyecto ya tiene sus archivos de configuración en orden: application.proper
 BUILD SUCCESS
 ```
 - Paso 3. Configurar la ejecución del proyecto de la siguiente forma:
-  ![image info](D:\Aplicaciones\Parrot Challenge\diagrams\run configuration parrot.png)
+  ![image info](D:\Aplicaciones\parrot-repository-master\diagrams\run configuration parrot.png)
 - Paso 4. Instalar postgreSQL y crear BD **db_parrot** de manera local
 - Paso 5. Si se desea ejecutar en ambiente local simplemente dar click en Run 'Application'
 - Paso 6. En la pestaña de Gradle, ejecutar la tarea "bootJar" dentro de la capeta build
@@ -77,7 +77,6 @@ docker build --tag {user_docker_hub}/parrot-challenge:{version} .
 ```sh
 docker push {user_docker_hub}/parrot-challenge:{version}
 ```
-![image info](D:\Aplicaciones\Parrot Challenge\diagrams\docker.png)
 
 - Paso 9. Modificar archivo docker-compose.yml version previamente generada
 - Paso 10. Levantar el contenedor de docker
@@ -90,7 +89,7 @@ docker-compose up -d
 
 - Paso 11. Probar desde Postman la ejecución de los flujos
 
-![image info](D:\Aplicaciones\Parrot Challenge\diagrams\postman.png)
+![image info](D:\Aplicaciones\parrot-repository-master\diagrams\postman.png)
 
 ![image](https://user-images.githubusercontent.com/67127741/124666499-bf7a4a00-de73-11eb-9b42-4043a98a82fe.png)
 
