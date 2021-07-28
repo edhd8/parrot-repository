@@ -49,7 +49,7 @@ Entidades de la base de datos:
 
 ## Entregables
 
-- Código fuente en repositorio **público** de GitHub https://github.com/edhd8/parrot-challenge
+- Código fuente en repositorio **público** de GitHub https://github.com/edhd8/parrot-repository
 - Documentación sobre cómo ejecutar el programa https://www.getpostman.com/collections/29b354016d3c1b7cf323
 ![image info](http://www.plantuml.com/plantuml/png/ZP2zQYin48NxUOgfxlKjzcw_HR0n9gG8CVcfbrbfOWkq8qKQXHZZfyeZvCMY9SGcO4CQIHpfpCUdULPAMaOFVxUgCNTj6pt9bFmtOMmplnGMmurrj4aq0b3H86KSE06eKy-uY0uJPyK6dpAdNFUxPAV37rodO8lH310hnnaNIHINth5elrZV_8ZNb5BGVhabxrastDy-W2MbWJ9Z_Bgq0y2fZitLkLQ7rwl73YUZAhHtiOzbyCxGeIsPKxkVrbvev0ESgMDJnnvv7MPwvSbiDjLMKgrt_m38Lv52OWEonv8B9HTmHvWPMKnXqKIugR4b6tx3MRqPZiPzl0kQKDl1aoLWiG37LzXSKlQ45Uagx1jABHydNkIVFhD39y_XddCCadbM5UULNKR_2G00)
   
