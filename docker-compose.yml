@@ -12,6 +12,6 @@ services:
       - 5433:5432
     image: postgres
     environment:
-      POSTGRES_DB: 'parrot'
+      POSTGRES_DB: 'parrot_db'
       POSTGRES_USER: 'admin'
       POSTGRES_PASSWORD: 'admin'

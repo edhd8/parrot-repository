@@ -1,6 +1,5 @@
 package io.parrotsoftware.pos.app.controllers
 
-import io.parrotsoftware.pos.app.controllers.HealthCheckController
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -19,12 +18,12 @@ class HealthCheckControllerTest {
     @Before
     fun prepare() {
         MockitoAnnotations.initMocks(this)
-        ReflectionTestUtils.setField(healthCheckController, "name", "Fuego-de-quasar")
+        ReflectionTestUtils.setField(healthCheckController, "name", "Parrot-challenge")
     }
 
     @Test
     fun health() {
-        val key = "[Fuego-de-quasar]"
+        val key = "[Parrot-challenge]"
         val value = "Status of the microservice is UP."
         val response = healthCheckController.getHealthCheck()
         Assert.assertEquals(response.statusCode, HttpStatus.OK)
