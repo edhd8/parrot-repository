@@ -6,7 +6,7 @@ Se tiene que crear una API que será consumida por un conjunto de clientes
 creación de órdenes. Tiene que contener los siguientes servicios web, almacenando los datos
 necesarios para su correcto funcionamiento.
 
-![image info](D:\Aplicaciones\parrot-repository-master\diagrams\image.png)
+![image info](https://github.com/edhd8/parrot-repository/blob/master/diagrams/image.png)
 
 ## Requerimientos de negocio
 
@@ -45,25 +45,27 @@ Entidades de la base de datos:
 >
 > Product Catalog 💻 table name: [product_catalog]
 
-![image info](D:\Aplicaciones\parrot-repository-master\diagrams\smartphone.png)
+![image info](https://github.com/edhd8/parrot-repository/blob/master/diagrams/smartphone.png)
 
 ## Entregables
 
 - Código fuente en repositorio **público** de GitHub https://github.com/edhd8/parrot-repository
 - Documentación sobre cómo ejecutar el programa https://www.getpostman.com/collections/29b354016d3c1b7cf323
+
 ![image info](http://www.plantuml.com/plantuml/png/ZP2zQYin48NxUOgfxlKjzcw_HR0n9gG8CVcfbrbfOWkq8qKQXHZZfyeZvCMY9SGcO4CQIHpfpCUdULPAMaOFVxUgCNTj6pt9bFmtOMmplnGMmurrj4aq0b3H86KSE06eKy-uY0uJPyK6dpAdNFUxPAV37rodO8lH310hnnaNIHINth5elrZV_8ZNb5BGVhabxrastDy-W2MbWJ9Z_Bgq0y2fZitLkLQ7rwl73YUZAhHtiOzbyCxGeIsPKxkVrbvev0ESgMDJnnvv7MPwvSbiDjLMKgrt_m38Lv52OWEonv8B9HTmHvWPMKnXqKIugR4b6tx3MRqPZiPzl0kQKDl1aoLWiG37LzXSKlQ45Uagx1jABHydNkIVFhD39y_XddCCadbM5UULNKR_2G00)
   
 ## Installation
 
 El proyecto ya tiene sus archivos de configuración en orden: application.properties, build.gradle.kts, etc. Si se desea desplegar en ambiente productivo realizar los pasos 1, 6-10, los pasos 2-5 son opcionales si se desea ejecutar el proyecto en ambiente local. El paso 11 es común en ambos ambientes.
 
-- Paso 1. Descargar la última versión del código de la rama develop https://github.com/edhd8/parrot-challenge.git
+- Paso 1. Descargar la última versión del código de la rama develop https://github.com/edhd8/parrot-repository.git
 - Paso 2. Compilar el proyecto con Ctrl+F9, correspondiente a la opción 'build project' esperando el resultado
 ```sh
 BUILD SUCCESS
 ```
 - Paso 3. Configurar la ejecución del proyecto de la siguiente forma:
-  ![image info](D:\Aplicaciones\parrot-repository-master\diagrams\run configuration parrot.png)
+
+![image info](https://github.com/edhd8/parrot-repository/blob/master/diagrams/run configuration parrot.png)
 - Paso 4. Instalar postgreSQL y crear BD **db_parrot** de manera local
 - Paso 5. Si se desea ejecutar en ambiente local simplemente dar click en Run 'Application'
 - Paso 6. En la pestaña de Gradle, ejecutar la tarea "bootJar" dentro de la capeta build
@@ -89,7 +91,7 @@ docker-compose up -d
 
 - Paso 11. Probar desde Postman la ejecución de los flujos
 
-![image info](D:\Aplicaciones\parrot-repository-master\diagrams\postman.png)
+![image info](https://github.com/edhd8/parrot-repository/blob/master/diagrams/postman.png)
 
 ![image](https://user-images.githubusercontent.com/67127741/124666499-bf7a4a00-de73-11eb-9b42-4043a98a82fe.png)
 
