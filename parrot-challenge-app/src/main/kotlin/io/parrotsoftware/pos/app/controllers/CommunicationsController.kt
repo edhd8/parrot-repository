@@ -3,6 +3,7 @@ package io.parrotsoftware.pos.app.controllers
 import io.parrotsoftware.pos.api.CommunicationsInterface
 import io.parrotsoftware.pos.common.dto.User
 import io.parrotsoftware.pos.common.exceptions.ApiException
+import io.parrotsoftware.pos.common.request.OrderRequest
 import io.parrotsoftware.pos.common.routes.Route
 import io.parrotsoftware.pos.core.services.CoreService
 import org.springframework.beans.factory.annotation.Autowired
@@ -28,6 +29,17 @@ class CommunicationsController : CommunicationsInterface {
                           @RequestBody user: User): ResponseEntity<*> {
         return try {
             ResponseEntity.status(HttpStatus.OK).body(coreService.saveUser(userName, user))
+        } catch (e: ApiException) {
+            throw ResponseStatusException(HttpStatus.NOT_FOUND, e.message, e)
+        }
+    }
+
+    @PostMapping(value = [Route.Core.NEW_ORDER])
+    override fun saveOrder(@PathVariable("user_name") userName: String,
+                           @RequestBody order: OrderRequest
+    ): ResponseEntity<*> {
+        return try {
+            ResponseEntity.status(HttpStatus.OK).body(coreService.saveOrder(userName, order))
         } catch (e: ApiException) {
             throw ResponseStatusException(HttpStatus.NOT_FOUND, e.message, e)
         }

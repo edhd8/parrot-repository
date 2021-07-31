@@ -5,6 +5,8 @@ import io.parrotsoftware.pos.common.dto.User
 import io.parrotsoftware.pos.common.exceptions.ApiException
 import io.parrotsoftware.pos.common.exceptions.ErrorCode
 import io.parrotsoftware.pos.common.exceptions.ErrorMessage
+import io.parrotsoftware.pos.common.request.OrderRequest
+import io.parrotsoftware.pos.domain.repository.OrderRepository
 import io.parrotsoftware.pos.domain.repository.UserRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,6 +20,9 @@ class CoreService {
 
     @Autowired
     private lateinit var userRepository: UserRepository
+
+    @Autowired
+    private lateinit var orderRepository: OrderRepository
 
     fun saveUser(userName: String, user: User): String {
         try {
@@ -38,6 +43,32 @@ class CoreService {
             //TODO EXCEPTION LOCATION WITH I18N
             logger.error("--PARROT CHALLENGE --CoreService:saveUser --Error: [{}]", e.message)
             throw ApiException(ErrorCode.SAVE_INFO, ErrorMessage.CONSTRAINT_SAVE_INFO_MESSAGE, HttpStatus.BAD_REQUEST)
+        }
+    }
+
+    fun saveOrder(userName: String, order: OrderRequest): String {
+        try {
+            val gson = Gson()
+            logger.info("--PARROT CHALLENGE --CoreService:saveOrder --User Name: [{}] --Order: {}", userName, gson.toJson(order))
+
+            //TODO IFs Validar que el usuario y los productos existan y total price mayor a cero , 3 excepciones
+            val orderEntity = io.parrotsoftware.pos.domain.model.Order().apply {
+                name = userName
+                products = gson.toJson(order.products)
+                quantities = gson.toJson(order.quantities)
+                subtotals = gson.toJson(order.subtotals)
+                totalPrice = order.totalPrice
+                createdAt = Timestamp(System.currentTimeMillis())
+            }
+
+            val response = orderRepository.save(orderEntity)
+            logger.info("--PARROT CHALLENGE --CoreService:saveOrder --Response Save: [{}]", response)
+
+            return HttpStatus.OK.name
+        } catch (e: Exception) {
+            //TODO EXCEPTION LOCATION WITH I18N
+            logger.error("--PARROT CHALLENGE --CoreService:saveOrder --Error: [{}]", e.message)
+            throw ApiException(ErrorCode.SAVE_INFO, ErrorMessage.DEFAULT_SAVE_INFO_MESSAGE, HttpStatus.NOT_FOUND)
         }
     }
 

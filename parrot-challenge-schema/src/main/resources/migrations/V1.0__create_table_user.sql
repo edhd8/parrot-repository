@@ -8,4 +8,4 @@ CREATE TABLE public.users (
     constraint pk_users PRIMARY KEY (email)
 );
 
-CREATE INDEX index_user_name ON public.users(name);
+CREATE INDEX index_users_name ON public.users(name);
