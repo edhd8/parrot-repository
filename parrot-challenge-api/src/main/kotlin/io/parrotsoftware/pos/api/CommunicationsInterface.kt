@@ -9,4 +9,6 @@ interface CommunicationsInterface {
     fun saveUser(userName: String, user: User): ResponseEntity<*>
 
     fun saveOrder(userName: String, order: OrderRequest): ResponseEntity<*>
+
+    fun getReport(from: String, to: String): ResponseEntity<*>
 }

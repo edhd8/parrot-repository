@@ -10,6 +10,7 @@ object Route {
     object Core {
         const val NEW_USER = "user/{user_name}"
         const val NEW_ORDER = "order/{user_name}"
+        const val REPORT = "report"
     }
 
 }
